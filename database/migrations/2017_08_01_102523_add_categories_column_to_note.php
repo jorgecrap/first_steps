@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateNotesTable extends Migration
+class AddCategoriesColumnToNote extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,8 @@ class CreateNotesTable extends Migration
      */
     public function up()
     {
-        Schema::create('notes', function (Blueprint $table) {
-            $table->increments('id');
-
-            $table->mediumtext('note');
-
-            $table->timestamps(); //created_at, updated_at
+        Schema::table('notes', function (Blueprint $table) {
+            $table->unsignedInteger('category_id')->nullable()->index()->after('note');
         });
     }
 
@@ -28,6 +24,8 @@ class CreateNotesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('notes');
+        Schema::table('notes', function (Blueprint $table) {
+            $table->dropColumn('category_id');
+        });
     }
 }
