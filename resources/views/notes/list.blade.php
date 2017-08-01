@@ -19,6 +19,7 @@
 						@endforeach
 
 					</ul>
+					{!! $notes->render() !!}
 				</div>
 
 				<div class="four columns">
@@ -31,8 +32,6 @@
 							<li>Item04</li>
 							<li>Item05</li>
 						</ul>
-					
-				
 				</div>
 
 			</div>

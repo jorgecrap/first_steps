@@ -17,3 +17,7 @@ footer{
 	padding: 10px;
 	border-top: dotted 1px #cdcdcd;
 }
+
+.pagination>li>a, .pagination>li>span{
+	border: 0;
+}
