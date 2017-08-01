@@ -24,7 +24,17 @@ class NotesController extends Controller
 
     public function store()
     {
-    	return 'Creando una nota';
+    	
+        $this->validate(request(),[
+            'note' => ['required','max:200']        
+        ]);
+
+        $data =  request()->all();
+        
+        Note::create($data);
+
+        return redirect()->to('notes');
+
     }
 
     public function show($id)

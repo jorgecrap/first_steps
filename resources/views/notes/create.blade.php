@@ -6,23 +6,33 @@
 				
 				<div class="eight columns">
 					
-					<h2>Crea una Notas</h2>
+					<h2>Crear una nota</h2>
 
-					<form method="post" >
+					<form method="post" action="{{ url('notes') }}">
+
+						@include('partials/errors')
 
 						{{ csrf_field() }}
 
-						<label for="nota">Nota</label>
+						<label for="note">Nota</label>
 
-						<textarea id="nota" name="nota" class="u-full-width" placeholder="Escribe tu nota…"></textarea>
+						<textarea id="note" name="note" class="u-full-width" placeholder="Escribe tu nota…">{{ old('note') }}</textarea>
 						
-						<input class="button-primary" type="submit" value="Submit">			
+						<input class="button-primary" type="submit" value="Crear nota">			
 
 					</form>
 				</div>
 
 				<div class="four columns">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempor, nibh sed placerat vulputate, mauris risus tristique nulla, eu elementum lorem arcu quis nibh. Aenean at quam lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris consequat sapien quis cursus semper. Cras rutrum nunc luctus nibh consectetur, id porta ante vulputate. Aliquam metus nisl, tempus quis aliquam eget, congue non dui. Pellentesque pulvinar nec dolor et lobortis. Nulla pellentesque metus vel dolor viverra pulvinar. Suspendisse tempus ultrices elit, sed commodo elit eleifend ac. Phasellus varius libero ac sapien mollis, at tristique augue iaculis. Duis vel rhoncus metus, nec dictum mi. Morbi bibendum eget est in fermentum. Nullam consequat et velit ut placerat.</p>
+					<h4>Menu lateral</h4>
+						<ul>
+							<li>Item01</li>
+							<li>Item02</li>
+							<li>Item03</li>
+							<li>Item04</li>
+							<li>Item05</li>
+						</ul>
+					
 				</div>
 
 			</div>

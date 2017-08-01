@@ -8,7 +8,7 @@ Route::get('/', function () {
 
 Route::get('notes', 'NotesController@index');
 
-Route::post('notes/create', 'NotesController@store');
+Route::post('notes/', 'NotesController@store');
 Route::get('notes/create', 'NotesController@create');
 
 
