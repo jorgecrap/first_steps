@@ -12,4 +12,4 @@ Route::post('notes/', 'NotesController@store');
 Route::get('notes/create', 'NotesController@create');
 
 
-Route::get('notes/{id}/{slug?}', 'NotesController@show')->where('id','\d+');
+Route::get('notes/{note}', 'NotesController@show')->where('note','\d+');
