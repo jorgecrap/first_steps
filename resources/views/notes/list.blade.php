@@ -9,11 +9,17 @@
 					<p>
 						<a href="{{ url('notes/create') }}">Nueva nota</a>
 					</p>
-					<ul>
+					<ul class="list-group">
 						@foreach ($notes as $note)
 
-						<li>
-							{{ $note->note }}				
+						<li class="list-group-item">
+							@if ($note->category)
+								<span class="label label-info">{{ $note->category->name }}</span>
+							@else
+								<span class="label label-info">Otras</span>
+							@endif
+							{{ str_limit($note->note, $limit = 50, $end = '...') }}
+							 <small><a href="{{ url('notes/'.$note->id) }}">Ver nota</a></small>
 						</li>
 
 						@endforeach
